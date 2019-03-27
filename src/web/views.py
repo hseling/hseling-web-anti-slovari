@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, JsonResponse
 from django import forms
@@ -5,7 +7,7 @@ from django import forms
 import requests
 
 
-HSE_API_ROOT = "http://hse-api-web/"
+HSE_API_ROOT = os.environ.get("HSELING_API_ROOT", "http://hse-api-web/")
 
 # Create your views here.
 def web_index(request):
